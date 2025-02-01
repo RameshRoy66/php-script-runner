@@ -1,0 +1,17 @@
+name: Run PHP Script Every 5 Seconds
+
+on:
+  schedule:
+    - cron: '*/1 * * * *'  # Runs every minute
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run script
+        run: |
+          chmod +x ./run.sh
+          ./run.sh
