@@ -11,7 +11,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Make script executable
+        run: chmod +x ./run.sh
+
       - name: Run script
-        run: |
-          chmod +x ./run.sh
-          ./run.sh
+        run: ./run.sh
